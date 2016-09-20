@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Users> call, Response<Users> response) {
                 int status = response.code();
                 tv_respond.setText(String.valueOf(status));
-
+                tv_result_api.setText("");
                 //this extract data from retrofit with for() loop
                 for(Users.UserItem user : response.body().getUsers()) {
                     tv_result_api.append(
